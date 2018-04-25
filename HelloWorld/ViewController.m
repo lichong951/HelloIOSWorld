@@ -102,8 +102,18 @@ int tip=0;
     swi.thumbTintColor=[UIColor orangeColor];
     [swi addTarget:self action:@selector(changeBackgroundColor:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:swi];
-    
+    /**=========================UIPageControl======================================================**/
+    self.view.backgroundColor=[UIColor blackColor];
+    UIPageControl *page=[[UIPageControl alloc]initWithFrame:CGRectMake(20, 270, 280, 30)];
+    page.currentPageIndicatorTintColor=[UIColor redColor];
+    [page addTarget:self action:@selector(changeNum:) forControlEvents:UIControlEventValueChanged];
+    page.numberOfPages=8;
+    [self.view addSubview:page];
 }
+-(void)changeNum:(UIPageControl *)page{
+    NSLog(@"%lu",page.currentPage);
+}
+
 
 -(void) changeBackgroundColor:(UISwitch *)swi{
     if (swi.isOn) {
