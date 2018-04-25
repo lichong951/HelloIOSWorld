@@ -147,6 +147,15 @@ int tip=0;
    
     [self.view addSubview:indicator];
      [indicator startAnimating];
+    /**=========================UIProgressView
+     
+     ======================================================**/
+    UIProgressView *progressView=[[UIProgressView alloc]
+                                  initWithFrame:CGRectMake(20, 400, 280, 30 )];
+    progressView.progressTintColor=[UIColor redColor];
+    progressView.trackTintColor=[UIColor blueColor];
+    [self.view addSubview:progressView];
+    progressView.progress=0.5;
 }
 
 -(void)changeValue:(UISlider *)slider{
