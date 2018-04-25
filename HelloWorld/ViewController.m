@@ -116,6 +116,29 @@ int tip=0;
     [seg setContentOffset:CGSizeMake(10, 10) forSegmentAtIndex:0];
     seg.momentary=NO;
     [self.view addSubview:seg];
+    
+    /**=========================UISlider
+     
+     ======================================================**/
+    
+    UISlider *slider=[[UISlider alloc]initWithFrame:CGRectMake(20, 350, 280, 30)];
+    slider.continuous=YES;
+    slider.minimumValue=0;
+    slider.maximumValue=10;
+    slider.minimumTrackTintColor=[UIColor redColor];
+    slider.maximumTrackTintColor=[UIColor greenColor];
+    slider.thumbTintColor=[UIColor blueColor];
+    [slider addTarget:self action:@selector(changeValue:) forControlEvents:UIControlEventValueChanged];
+    
+    slider.minimumValueImage=[UIImage imageNamed:@"ic_launcher"];
+    slider.maximumValueImage=[UIImage imageNamed:@"ic_launcher"];
+    [slider setThumbImage:[UIImage imageNamed:@"ic_launcher"] forState:UIControlStateNormal];
+    
+    [self.view addSubview: slider];
+}
+
+-(void)changeValue:(UISlider *)slider{
+    NSLog(@"%f",slider.value);
 }
 -(void)changeNum:(UIPageControl *)page{
     NSLog(@"%lu",page.currentPage);
