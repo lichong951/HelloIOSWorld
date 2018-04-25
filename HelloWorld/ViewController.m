@@ -135,6 +135,18 @@ int tip=0;
     [slider setThumbImage:[UIImage imageNamed:@"ic_launcher"] forState:UIControlStateNormal];
     
     [self.view addSubview: slider];
+    
+    /**=========================UIActivityindicatorView
+     
+     ======================================================**/
+    UIActivityIndicatorView *indicator=[[UIActivityIndicatorView alloc]
+                            initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray
+                                        ];
+    indicator.center=CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    indicator.color=[UIColor whiteColor];
+   
+    [self.view addSubview:indicator];
+     [indicator startAnimating];
 }
 
 -(void)changeValue:(UISlider *)slider{
