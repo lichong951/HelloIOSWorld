@@ -109,6 +109,13 @@ int tip=0;
     [page addTarget:self action:@selector(changeNum:) forControlEvents:UIControlEventValueChanged];
     page.numberOfPages=8;
     [self.view addSubview:page];
+    /**=========================UISegmentedControl======================================================**/
+    UISegmentedControl *seg=[[UISegmentedControl alloc]initWithItems:@[@"one",@"",@"three",@"four"]];
+    seg.frame=CGRectMake(20, 310, 280, 30);
+    [seg setImage:[[UIImage imageNamed:@"ic_launcher"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forSegmentAtIndex:1];
+    [seg setContentOffset:CGSizeMake(10, 10) forSegmentAtIndex:0];
+    seg.momentary=NO;
+    [self.view addSubview:seg];
 }
 -(void)changeNum:(UIPageControl *)page{
     NSLog(@"%lu",page.currentPage);
