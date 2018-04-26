@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 int tip=0;
-@interface ViewController ()<UITextFieldDelegate>
+@interface ViewController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 @end
 
@@ -38,6 +38,11 @@ int tip=0;
     NSLog(@"%d initWithCoder",++tip);
     return self;
 }
+
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+    NSLog(@"%d encodeWithCoder",++tip);
+}
+
 - (void)awakeFromNib{
     [super awakeFromNib];
     NSLog(@"%d awakeFromNib",++tip);
@@ -52,11 +57,11 @@ int tip=0;
     [super viewDidLoad];
     NSLog(@"%d viewDidLoad",++tip);
     // Do any additional setup after loading the view, typically from a nib.
-     /**=========================UILabel======================================================**/
+    /**=========================UILabel======================================================**/
     UILabel *lable=[[UILabel alloc]initWithFrame:CGRectMake(20, 100,280 , 30)];
     lable.text=@"Hello World 16:45 2018 04 21 16:45 2018 04 21 ";
     lable.numberOfLines=0;
-//    lable.lineBreakMode=NSLineBreakByWordWrapping;
+    //    lable.lineBreakMode=NSLineBreakByWordWrapping;
     lable.lineBreakMode=NSLineBreakByTruncatingMiddle;
     lable.backgroundColor=[UIColor redColor];
     lable.font=[UIFont systemFontOfSize:20];
@@ -65,8 +70,8 @@ int tip=0;
     
     lable.textAlignment=NSTextAlignmentCenter;
     
-//    lable.shadowColor=[UIColor greenColor];
-//    lable.shadowOffset=CGSizeMake(10, 10);
+    //    lable.shadowColor=[UIColor greenColor];
+    //    lable.shadowOffset=CGSizeMake(10, 10);
     
     [self.view addSubview:lable];
     
@@ -74,12 +79,12 @@ int tip=0;
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame=CGRectMake(40, 140, 240, 30);
     button.backgroundColor=[UIColor redColor];
-   
+    
     [button setTitle:@"点我一下" forState:UIControlStateNormal];
     [button addTarget:self  action:@selector(changeColor) forControlEvents:UIControlEventTouchUpInside];
-//    [button setBackgroundImage:[UIImage imageNamed:@"Fire"] forState:UIControlStateNormal];
-     [button setImage:[UIImage imageNamed:@"ic_launcher"] forState:UIControlStateNormal];
-//     button.imageEdgeInsets = UIEdgeInsetsMake(- (button.frame.size.height - button.titleLabel.frame.size.height- button.titleLabel.frame.origin.y),(button.frame.size.width -button.titleLabel.frame.size.width)/2.0f -button.imageView.frame.size.width, 0, 0);
+    //    [button setBackgroundImage:[UIImage imageNamed:@"Fire"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"ic_launcher"] forState:UIControlStateNormal];
+    //     button.imageEdgeInsets = UIEdgeInsetsMake(- (button.frame.size.height - button.titleLabel.frame.size.height- button.titleLabel.frame.origin.y),(button.frame.size.width -button.titleLabel.frame.size.width)/2.0f -button.imageView.frame.size.width, 0, 0);
     [self.view addSubview:button];
     
     /**=========================UITextField======================================================**/
@@ -140,13 +145,13 @@ int tip=0;
      
      ======================================================**/
     UIActivityIndicatorView *indicator=[[UIActivityIndicatorView alloc]
-                            initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray
+                                        initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray
                                         ];
     indicator.center=CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     indicator.color=[UIColor whiteColor];
-   
+    
     [self.view addSubview:indicator];
-     [indicator startAnimating];
+    [indicator startAnimating];
     /**=========================UIProgressView
      
      ======================================================**/
@@ -169,14 +174,24 @@ int tip=0;
     stepper.maximumValue=10;
     stepper.stepValue=1;
     stepper.tintColor=[UIColor redColor];
-//    [stepper setDecrementImage:[[UIImage imageNamed:@"ic_launcher"]
-//                                imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-//                      forState:UIControlStateNormal];
+    //    [stepper setDecrementImage:[[UIImage imageNamed:@"ic_launcher"]
+    //                                imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+    //                      forState:UIControlStateNormal];
     [stepper setIncrementImage:[[UIImage imageNamed:@"ic_launcher"]
                                 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal
                                 ] forState:UIControlStateNormal];
     [self.view addSubview:stepper];
     [stepper addTarget:self action:@selector(click:) forControlEvents:UIControlEventValueChanged];
+    
+    /**=====================================================
+     ***              UIPickerView
+     ======================================================**/
+    UIPickerView *picker=[[UIPickerView alloc] initWithFrame:
+                          CGRectMake(20, 500, 280, 150)];
+    picker.delegate=self;
+    picker.dataSource=self;
+    [self.view addSubview:picker];
+    
     
 }
 -(void)click:(UIStepper *) stepper{
@@ -239,23 +254,45 @@ int tip=0;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:<#animated#>];
+    //    [super viewWillAppear:<#animated#>];
     NSLog(@"%d viewWillAppear",++tip);
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:<#animated#>];
+    //    [super viewWillDisappear:<#animated#>];
     NSLog(@"%d viewWillDisappear",++tip);
     
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
-//    [super viewDidDisappear:<#animated#>];
-     NSLog(@"%d viewDidDisappear",++tip);
+    //    [super viewDidDisappear:<#animated#>];
+    NSLog(@"%d viewDidDisappear",++tip);
 }
 
 - (void)dealloc
 {
     NSLog(@"%d dealloc",++tip);
+}
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 2;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 10;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [NSString stringWithFormat:@"%lu分区%lu数据",component,row];
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 44;
+
+}
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    return 140;
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    NSLog(@"%lu,%lu",row,component);
 }
 @end
