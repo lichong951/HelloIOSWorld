@@ -156,8 +156,32 @@ int tip=0;
     progressView.trackTintColor=[UIColor blueColor];
     [self.view addSubview:progressView];
     progressView.progress=0.5;
+    
+    /**=========================UIStepper
+     
+     ======================================================**/
+    UIStepper *stepper=[[UIStepper alloc]init];
+    stepper.center=CGPointMake(50,450);
+    stepper.continuous=YES;
+    stepper.autorepeat=YES;
+    stepper.wraps=YES;
+    stepper.minimumValue=1;
+    stepper.maximumValue=10;
+    stepper.stepValue=1;
+    stepper.tintColor=[UIColor redColor];
+//    [stepper setDecrementImage:[[UIImage imageNamed:@"ic_launcher"]
+//                                imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+//                      forState:UIControlStateNormal];
+    [stepper setIncrementImage:[[UIImage imageNamed:@"ic_launcher"]
+                                imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal
+                                ] forState:UIControlStateNormal];
+    [self.view addSubview:stepper];
+    [stepper addTarget:self action:@selector(click:) forControlEvents:UIControlEventValueChanged];
+    
 }
-
+-(void)click:(UIStepper *) stepper{
+    NSLog(@"%f",stepper.value);
+}
 -(void)changeValue:(UISlider *)slider{
     NSLog(@"%f",slider.value);
 }
