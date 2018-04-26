@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /**=====================================================
+     ***              UISearchBar
+     ======================================================**/
     UISearchBar *searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(20, 100, 280, 30)];
     searchBar.tintColor=[UIColor redColor];
     searchBar.placeholder=@"请输入搜索内容";
@@ -26,7 +29,19 @@
     [self.view addSubview:searchBar];
     
     searchBar.delegate=self;
+    /**=====================================================
+     ***              UIDatePicker
+     ======================================================**/
+    UIDatePicker *datePicker=[[UIDatePicker alloc]initWithFrame:CGRectMake(20, 200, 280, 150)];
+    datePicker.datePickerMode=UIDatePickerModeTime;
+    [datePicker addTarget:self action:@selector(change:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:datePicker];
+    
 }
+-(void)change:(UIDatePicker *)picker{
+    NSLog(@"%@",picker.date);
+}
+
 //单击 切换 扩展 栏 上 的 按钮 时 触发 的 方法
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope{
