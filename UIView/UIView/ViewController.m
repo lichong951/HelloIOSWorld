@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UISearchBarDelegate>
+@interface ViewController ()<UISearchBarDelegate,UIAlertViewDelegate>
 
 @end
 
@@ -40,6 +40,18 @@
 }
 -(void)change:(UIDatePicker *)picker{
     NSLog(@"%@",picker.date);
+}
+
+/**=====================================================
+ ***              UIAlertView
+ ======================================================**/
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"标题" message:@"内容" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"click");
 }
 
 //单击 切换 扩展 栏 上 的 按钮 时 触发 的 方法
