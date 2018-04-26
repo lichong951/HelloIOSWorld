@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UISearchBarDelegate,UIAlertViewDelegate>
+@interface ViewController ()<UISearchBarDelegate,UIAlertViewDelegate,UIActionSheetDelegate>
 
 @end
 
@@ -41,18 +41,28 @@
 -(void)change:(UIDatePicker *)picker{
     NSLog(@"%@",picker.date);
 }
+/**=====================================================
+ ***              UIActionSheet
+ ======================================================**/
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UIActionSheet *actionSheet =[[UIActionSheet alloc]initWithTitle:@"标题" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:@"确定", nil];
+    [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"click");
+}
 
 /**=====================================================
  ***              UIAlertView
  ======================================================**/
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"标题" message:@"内容" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"click");
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"标题" message:@"内容" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//    [alert show];
+//}
+//
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    NSLog(@"click");
+//}
 
 //单击 切换 扩展 栏 上 的 按钮 时 触发 的 方法
 
