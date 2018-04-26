@@ -135,6 +135,27 @@ int tip=0;
     [slider setThumbImage:[UIImage imageNamed:@"ic_launcher"] forState:UIControlStateNormal];
     
     [self.view addSubview: slider];
+    
+    /**=========================UIActivityindicatorView
+     
+     ======================================================**/
+    UIActivityIndicatorView *indicator=[[UIActivityIndicatorView alloc]
+                            initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray
+                                        ];
+    indicator.center=CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    indicator.color=[UIColor whiteColor];
+   
+    [self.view addSubview:indicator];
+     [indicator startAnimating];
+    /**=========================UIProgressView
+     
+     ======================================================**/
+    UIProgressView *progressView=[[UIProgressView alloc]
+                                  initWithFrame:CGRectMake(20, 400, 280, 30 )];
+    progressView.progressTintColor=[UIColor redColor];
+    progressView.trackTintColor=[UIColor blueColor];
+    [self.view addSubview:progressView];
+    progressView.progress=0.5;
 }
 
 -(void)changeValue:(UISlider *)slider{
