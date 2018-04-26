@@ -191,7 +191,23 @@ int tip=0;
     picker.delegate=self;
     picker.dataSource=self;
     [self.view addSubview:picker];
-    
+    /**=====================================================
+     ***              CALayer
+     ======================================================**/
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(100, 650, 100, 100);
+    btn.backgroundColor=[UIColor redColor];
+    //带圆角
+//    btn.layer.masksToBounds=YES;
+//    btn.layer.cornerRadius=10;
+    //带边框
+//    btn.layer.borderColor=[UIColor greenColor].CGColor;
+//    btn.layer.borderWidth=5;
+    //阴影
+    btn.layer.shadowColor=[UIColor grayColor].CGColor;
+    btn.layer.shadowOffset=CGSizeMake(15, 15);
+    btn.layer.shadowOpacity=1;
+    [self.view addSubview:btn];
     
 }
 -(void)click:(UIStepper *) stepper{
