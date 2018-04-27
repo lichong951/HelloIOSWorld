@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisViewController.h"
 
 @interface LoginViewController : UIViewController
 @property   UITextField *loginText;
