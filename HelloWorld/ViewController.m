@@ -88,7 +88,9 @@ int conIndex=1;
     MyUIWebView *view=[[MyUIWebView alloc] init];
     [self presentViewController:view animated:YES completion:nil ];
 }
-
+-(void)click{
+    
+}
 -(void)addBtn:(NSString *)text X:(CGFloat) x Y:(CGFloat) y action:(SEL)action{
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame=CGRectMake(x, y, 180, 30);

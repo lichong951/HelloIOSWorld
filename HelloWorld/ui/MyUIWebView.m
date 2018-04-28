@@ -20,6 +20,13 @@
     NSURL *url=[NSURL URLWithString:@"http://www.baidu.com"];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
+    
+//    NSString *htmlStr= @"<html><head><meta charset=\" UTF- 8\"><title> 主 标题| 副标题 </title></head><body><p> hello world</p></body></html>";
+//    [webView loadHTMLString:htmlStr baseURL:nil];
+
+//    NSURL *imageUrl=[[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle]pathForResource:@"Fire" ofType:@"jpg"]];
+//    NSData *data=[NSData dataWithContentsOfURL:imageUrl];
+//    [webView loadData:data MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
     [self.view addSubview:webView];
 }
 
