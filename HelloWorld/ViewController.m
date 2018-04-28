@@ -24,16 +24,91 @@ int conIndex=1;
     self.view.backgroundColor=[UIColor whiteColor];
     self.title=[NSString stringWithFormat:@"第%d视图控制器",conIndex];
     conIndex++;
-   
-   [self addPushBtn:@"push"];
     
-    [self addBtn:@"跳转到登陆页"];
+    [self addPushBtn:@"push"];
     
+    [self addBtn:@"跳转到登陆页" X:20 Y:140 action:@selector(go2LoginView)];
     
+    [self addBtn:@"Navigation" X:165 Y:140 action:@selector(go2NavigationBar)];
+    /**=====================================================
+     ***              navigationBar
+     ======================================================**/
+//    self.navigationController.navigationBar.barTintColor=[UIColor purpleColor];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ic_launcher"] forBarMetrics:UIBarMetricsDefault];
+//    UIBarButtonItem *btnItem1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(click)];
+//
+//     UIBarButtonItem *btnItem2=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(click)];
+//    self.navigationItem.rightBarButtonItems=@[btnItem1,btnItem2];
+//       UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(click)];
+// UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(click)];
+//UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(click)];
+//    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(click)];
+//    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:@selector(click)];
+
+//    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(click)];
+
+//UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(click)];
+    
+//    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(click)];
+    
+//    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(click)];
+
+//UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(click)];
+//    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRedo target:self action:@selector(click)];
+    
+    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(click)];
+    UIBarButtonItem *item2=[[UIBarButtonItem alloc]initWithCustomView:[[UIView alloc]init]];
+    UIBarButtonItem *item3=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ic_launcher"] style:UIBarButtonItemStylePlain target:self action:@selector(click)];
+
+    UIBarButtonItem *item4=[[UIBarButtonItem alloc]initWithTitle:@"标题" style:UIBarButtonItemStylePlain target:self action:@selector(click)];
+
+//    self.navigationItem.rightBarButtonItems=@[item1,item2,item3,item4];
+    
+    /**=====================================================
+     ***              UINavigationBar
+     
+     张益珲. iOS开发实战：从入门到上架App Store(第2版) (Kindle位置2235). 清华大学出版社. Kindle 版本.
+     ======================================================**/
+    self.navigationController.toolbarHidden=NO;
+    self.navigationController.toolbar.barTintColor=[UIColor redColor];
+    
+    self.toolbarItems=@[item1,item2,item3,item4];
+    self.navigationController.hidesBarsWhenVerticallyCompact=YES;
+    self.navigationController.hidesBarsOnTap=YES;
+    self.navigationController.hidesBarsWhenKeyboardAppears=YES;
+    self.navigationController.hidesBarsOnSwipe=YES;
+    
+    /**=====================================================
+     ***              UITabBarController
+     
+     
+     ======================================================**/
 }
+
+
+
+-(void)addBtn:(NSString *)text X:(CGFloat) x Y:(CGFloat) y action:(SEL)action{
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(x, y, 140, 30);
+    btn.backgroundColor=[UIColor redColor];
+    [btn setTitle:text forState:UIControlStateNormal];
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    //带圆角
+        btn.layer.masksToBounds=YES;
+        btn.layer.cornerRadius=10;
+    //带边框
+    //    btn.layer.borderColor=[UIColor greenColor].CGColor;
+    //    btn.layer.borderWidth=5;
+//    //阴影
+//    btn.layer.shadowColor=[UIColor grayColor].CGColor;
+//    btn.layer.shadowOffset=CGSizeMake(15, 15);
+//    btn.layer.shadowOpacity=1;
+    [self.view addSubview:btn];
+}
+
 -(void)addPushBtn:(NSString *)text{
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame=CGRectMake(165, 100, 140, 30);
+    btn.frame=CGRectMake(20, 100, 140, 30);
     btn.backgroundColor=[UIColor blueColor];
     [btn setTitle:text forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
@@ -49,38 +124,23 @@ int conIndex=1;
     //    btn.layer.shadowOpacity=1;
     [self.view addSubview:btn];
 }
+
+
 -(void)push{
+    
     ViewController *con=[[ViewController alloc] init];
     con.title=[NSString stringWithFormat:@"第%d视图控制器",conIndex];
     [self.navigationController pushViewController:con animated:YES];
 }
-
-
--(void)addBtn:(NSString *)text{
-    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame=CGRectMake(20, 100, 140, 30);
-    btn.backgroundColor=[UIColor redColor];
-    [btn setTitle:text forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(go2LoginView) forControlEvents:UIControlEventTouchUpInside];
-    //带圆角
-        btn.layer.masksToBounds=YES;
-        btn.layer.cornerRadius=10;
-    //带边框
-    //    btn.layer.borderColor=[UIColor greenColor].CGColor;
-    //    btn.layer.borderWidth=5;
-//    //阴影
-//    btn.layer.shadowColor=[UIColor grayColor].CGColor;
-//    btn.layer.shadowOffset=CGSizeMake(15, 15);
-//    btn.layer.shadowOpacity=1;
-    [self.view addSubview:btn];
-}
-
-
 -(void)go2LoginView{
     LoginViewController * loginView=[[LoginViewController alloc]init];
     [self presentViewController:loginView animated:YES completion:nil];
 }
 
+-(void)go2NavigationBar{
+    MyNavigationBarController * loginView=[[MyNavigationBarController alloc]init];
+    [self presentViewController:loginView animated:YES completion:nil];
+}
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -91,7 +151,11 @@ int conIndex=1;
     NSLog(@"%d viewDidLayoutSubviews",++tip);
 }
 
-
+- (void)dealloc
+{
+    
+    conIndex--;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -115,16 +179,13 @@ int conIndex=1;
     NSLog(@"%d viewDidDisappear",++tip);
 }
 
-- (void)dealloc
-{
-    NSLog(@"%d dealloc",++tip);
-    conIndex--;
-}
+
 + (void)initialize
 {
     [super initialize];
     NSLog(@"%d initialize",++tip);
 }
+
 - (instancetype)init
 {
     self = [super init];
