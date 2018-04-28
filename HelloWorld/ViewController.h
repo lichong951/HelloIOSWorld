@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #import "MyNavigationBarController.h"
-
+#import "MyUITabBarController.h"
+#import "MyUIScrollView.h"
+#import "MyUIWebView.h"
 
 @interface ViewController : UIViewController
 

@@ -30,6 +30,9 @@ int conIndex=1;
     [self addBtn:@"跳转到登陆页" X:20 Y:140 action:@selector(go2LoginView)];
     
     [self addBtn:@"Navigation" X:165 Y:140 action:@selector(go2NavigationBar)];
+    [self addBtn:@"UITabBarController" X:20 Y:175 action:@selector(go2UITabBarController)];
+    [self addBtn:@"UIScrollView" X:200 Y:175 action:@selector(go2UIScrollView)];
+    [self addBtn:@"UIWebView" X:20 Y:210 action:@selector(go2UIWebView)];
     /**=====================================================
      ***              navigationBar
      ======================================================**/
@@ -78,18 +81,17 @@ int conIndex=1;
     self.navigationController.hidesBarsWhenKeyboardAppears=YES;
     self.navigationController.hidesBarsOnSwipe=YES;
     
-    /**=====================================================
-     ***              UITabBarController
-     
-     
-     ======================================================**/
+
 }
 
-
+-(void)go2UIWebView{
+    MyUIWebView *view=[[MyUIWebView alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
+}
 
 -(void)addBtn:(NSString *)text X:(CGFloat) x Y:(CGFloat) y action:(SEL)action{
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame=CGRectMake(x, y, 140, 30);
+    btn.frame=CGRectMake(x, y, 180, 30);
     btn.backgroundColor=[UIColor redColor];
     [btn setTitle:text forState:UIControlStateNormal];
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
@@ -140,6 +142,14 @@ int conIndex=1;
 -(void)go2NavigationBar{
     MyNavigationBarController * loginView=[[MyNavigationBarController alloc]init];
     [self presentViewController:loginView animated:YES completion:nil];
+}
+-(void)go2UITabBarController{
+    MyUITabBarController *view=[[MyUITabBarController alloc]init];
+    [self presentViewController:view animated:YES completion:nil];
+}
+-(void)go2UIScrollView{
+    MyUIScrollView *view=[[MyUIScrollView alloc]init];
+    [self presentViewController:view animated:YES completion:nil];
 }
 
 - (void)viewWillLayoutSubviews{
