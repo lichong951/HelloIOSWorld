@@ -110,6 +110,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"commitEditingStyle =%ld",indexPath.row);
 }
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    return @[@"one",@"two"];
+}
+
 /*
 #pragma mark - Navigation
 
