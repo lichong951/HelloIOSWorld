@@ -33,6 +33,7 @@ int conIndex=1;
     [self addBtn:@"UITabBarController" X:20 Y:175 action:@selector(go2UITabBarController)];
     [self addBtn:@"UIScrollView" X:200 Y:175 action:@selector(go2UIScrollView)];
     [self addBtn:@"UIWebView" X:20 Y:210 action:@selector(go2UIWebView)];
+    [self addBtn:@"UITableView" X:200 Y:210 action:@selector(go2UITableView)];
     /**=====================================================
      ***              navigationBar
      ======================================================**/
@@ -83,7 +84,10 @@ int conIndex=1;
     
 
 }
-
+-(void)go2UITableView{
+    MyUITableViewViewController *view=[[MyUITableViewViewController alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
+}
 -(void)go2UIWebView{
     MyUIWebView *view=[[MyUIWebView alloc] init];
     [self presentViewController:view animated:YES completion:nil ];

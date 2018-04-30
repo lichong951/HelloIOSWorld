@@ -12,6 +12,7 @@
 #import "MyUITabBarController.h"
 #import "MyUIScrollView.h"
 #import "MyUIWebView.h"
+#import "MyUITableViewViewController.h"
 
 @interface ViewController : UIViewController
 
