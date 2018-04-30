@@ -56,6 +56,36 @@
     
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        return 100;
+    }else{
+        return 44;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 50)];
+    view.backgroundColor=[UIColor greenColor];
+    
+    return view;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 50)];
+    view.backgroundColor=[UIColor blueColor];
+    
+    return view;
+}
 /*
 #pragma mark - Navigation
 
