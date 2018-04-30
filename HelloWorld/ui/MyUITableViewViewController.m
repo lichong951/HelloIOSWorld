@@ -19,6 +19,7 @@
     UITableView *tableView= [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     tableView.delegate=self;
     tableView.dataSource=self;
+    tableView.editing=YES;
     [self.view addSubview:tableView];
     
 }
@@ -85,6 +86,29 @@
     view.backgroundColor=[UIColor blueColor];
     
     return view;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"didSelectRowAtIndexPath =%ld",indexPath.section);
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        return UITableViewCellEditingStyleInsert;
+    }else{
+        return UITableViewCellEditingStyleDelete;
+    }
+}
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"commitEditingStyle =%ld",indexPath.row);
 }
 /*
 #pragma mark - Navigation
