@@ -16,22 +16,9 @@ int conIndex1=1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor redColor];
+    
     self.title=[NSString stringWithFormat:@"第%d视图控制器",conIndex1];
     conIndex1++;
-    self.navigationController.navigationBar.barTintColor=[UIColor purpleColor];
-//    MainViewControllerForSaFari *vc = [[UIStoryboard storyboardWithName:@"MyNavigation" bundle:nil] instantiateInitialViewController];
-//    // 3、跳转到对应的ViewController
-//    [self presentViewController:vc animated:YES completion:nil];
-    
-//    //1、先获取到ViewController所在的StoryBoard.
-//    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//    //2、在storyboard中根据storyBoardID来获取我们要的ViewController .
-//    MainViewControllerForSaFari *vc = [story instantiateViewControllerWithIdentifier:@"test"];
-//    // 3、跳转到对应的ViewController
-//    [self presentViewController:vc animated:YES completion:nil];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

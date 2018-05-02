@@ -42,11 +42,10 @@ int tip=0;
 }
 -(void)go2SaFari{
     //1、先获取到ViewController所在的StoryBoard.
-    //UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"SaFari" bundle:[NSBundle mainBundle]];
     //2、在storyboard中根据storyBoardID来获取我们要的ViewController .
     //MainViewControllerForSaFari *vc = [story instantiateViewControllerWithIdentifier:@"test"];
     
-    UIStoryboard *story = [UIStoryboard storyboardWithName:@"MyNavigation" bundle:[NSBundle mainBundle]];
     UINavigationController *vc = [story instantiateViewControllerWithIdentifier:@"navigation"];
     
     // 3、跳转到对应的ViewController
