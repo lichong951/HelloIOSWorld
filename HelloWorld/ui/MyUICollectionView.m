@@ -8,7 +8,7 @@
 
 #import "MyUICollectionView.h"
 
-@interface MyUICollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface MyUICollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -18,6 +18,8 @@
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc]init];
+    layout.minimumLineSpacing=30;
+    layout.minimumInteritemSpacing=10;
     layout.scrollDirection=UICollectionViewScrollDirectionVertical;
     layout.itemSize=CGSizeMake(100, 100);
     UICollectionView *collectionView   =[[UICollectionView alloc]initWithFrame:self.view.frame collectionViewLayout:layout];
@@ -47,6 +49,13 @@
                                           blue:arc4random()%255/255.0
                                          alpha:1];
     return cell;
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row%2==0) {
+        return CGSizeMake(50, 50);
+    }else{
+        return CGSizeMake(100, 100);
+    }
 }
 /*
 #pragma mark - Navigation
