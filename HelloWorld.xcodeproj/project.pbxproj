@@ -42,6 +42,9 @@
 		FA7A00BF208D93C6001E71BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A00BE208D93C6001E71BD /* main.m */; };
 		FA7A00C9208D93C7001E71BD /* HelloWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A00C8208D93C7001E71BD /* HelloWorldTests.m */; };
 		FA7A00D4208D93C7001E71BD /* HelloWorldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A00D3208D93C7001E71BD /* HelloWorldUITests.m */; };
+		FAABA0082099663D0096A0CE /* MyUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAABA0072099663D0096A0CE /* MyUICollectionView.m */; };
+		FAABA009209966610096A0CE /* MyNavigationBarController.h in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFEA20941DE0001D65D9 /* MyNavigationBarController.h */; };
+		FAABA00A209966690096A0CE /* MyUITableViewViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = FA46BB67209573E900B27B22 /* MyUITableViewViewController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,8 @@
 		FA7A00CF208D93C7001E71BD /* HelloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7A00D3208D93C7001E71BD /* HelloWorldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldUITests.m; sourceTree = "<group>"; };
 		FA7A00D5208D93C7001E71BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAABA0062099663D0096A0CE /* MyUICollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUICollectionView.h; sourceTree = "<group>"; };
+		FAABA0072099663D0096A0CE /* MyUICollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUICollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +217,8 @@
 				FA32AFF420947662001D65D9 /* MyUIWebView.m */,
 				FA46BB67209573E900B27B22 /* MyUITableViewViewController.h */,
 				FA46BB68209573E900B27B22 /* MyUITableViewViewController.m */,
+				FAABA0062099663D0096A0CE /* MyUICollectionView.h */,
+				FAABA0072099663D0096A0CE /* MyUICollectionView.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -421,6 +428,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAABA00A209966690096A0CE /* MyUITableViewViewController.h in Sources */,
+				FAABA009209966610096A0CE /* MyNavigationBarController.h in Sources */,
 				FA32AFA92092D371001D65D9 /* MainViewController.swift in Sources */,
 				FA32AFDD209351A6001D65D9 /* MyUIAlertView.m in Sources */,
 				FA32AFC520934C05001D65D9 /* MyUIProgressView.m in Sources */,
@@ -449,6 +458,7 @@
 				FA7A00B4208D93C4001E71BD /* ViewController.m in Sources */,
 				FA32AFD72093512E001D65D9 /* MyUIDatePicker.m in Sources */,
 				FA7A00BF208D93C6001E71BD /* main.m in Sources */,
+				FAABA0082099663D0096A0CE /* MyUICollectionView.m in Sources */,
 				FA7A00B1208D93C4001E71BD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

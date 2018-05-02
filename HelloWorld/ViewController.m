@@ -32,8 +32,11 @@ int conIndex=1;
     [self addBtn:@"Navigation" X:165 Y:140 action:@selector(go2NavigationBar)];
     [self addBtn:@"UITabBarController" X:20 Y:175 action:@selector(go2UITabBarController)];
     [self addBtn:@"UIScrollView" X:200 Y:175 action:@selector(go2UIScrollView)];
+    
     [self addBtn:@"UIWebView" X:20 Y:210 action:@selector(go2UIWebView)];
     [self addBtn:@"UITableView" X:200 Y:210 action:@selector(go2UITableView)];
+    
+    [self addBtn:@"UICollectionView" X:20 Y:245 action:@selector(go2UICollectionView)];
     /**=====================================================
      ***              navigationBar
      ======================================================**/
@@ -83,6 +86,11 @@ int conIndex=1;
     self.navigationController.hidesBarsOnSwipe=YES;
     
 
+}
+
+-(void)go2UICollectionView{
+    MyUICollectionView *view=[[MyUICollectionView alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
 }
 -(void)go2UITableView{
     MyUITableViewViewController *view=[[MyUITableViewViewController alloc] init];
@@ -146,8 +154,8 @@ int conIndex=1;
 }
 
 -(void)go2NavigationBar{
-    MyNavigationBarController * loginView=[[MyNavigationBarController alloc]init];
-    [self presentViewController:loginView animated:YES completion:nil];
+//    MyNavigationBarController * loginView=[[MyNavigationBarController alloc]init];
+//    [self presentViewController:loginView animated:YES completion:nil];
 }
 -(void)go2UITabBarController{
     MyUITabBarController *view=[[MyUITabBarController alloc]init];
