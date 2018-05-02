@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MyUICollectionViewFlowLayout.h"
+#import "UICollectionCircleViewFlowLayout.h"
 @interface MyUICollectionViewCustom : UIViewController
 
 @end

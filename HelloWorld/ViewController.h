@@ -16,6 +16,7 @@
 #import "MyUICollectionView.h"
 
 #import "MyUICollectionViewCustom.h"
+#import "MyUICollectionViewCircleLayout.h"
 
 @interface ViewController : UIViewController
 

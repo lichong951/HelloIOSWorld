@@ -40,8 +40,9 @@ int conIndex=1;
  
     
     //#import "MyUICollectionViewCustom.h"
+    #import "MyUICollectionViewCircleLayout.h"
     [self addBtn2:@"UICollectionViewCustom" X:20 Y:280 action:@selector(go2UICollectionViewCustom)];
-    
+     [self addBtn2:@"UICollectionViewCircleLayout" X:20 Y:315 action:@selector(go2UICollectionViewCircleLayout)];
     /**=====================================================
      ***              navigationBar
      ======================================================**/
@@ -92,6 +93,12 @@ int conIndex=1;
     
 
 }
+-(void)go2UICollectionViewCircleLayout
+{
+    MyUICollectionViewCircleLayout *view=[[MyUICollectionViewCircleLayout alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
+}
+
 -(void)go2UICollectionViewCustom{
     MyUICollectionViewCustom *view=[[MyUICollectionViewCustom alloc] init];
     [self presentViewController:view animated:YES completion:nil ];

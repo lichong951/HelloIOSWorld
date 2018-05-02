@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UICollectionCircleViewFlowLayout : UICollectionViewFlowLayout
-
+@interface UICollectionCircleViewFlowLayout : UICollectionViewLayout
+@property(nonatomic,assign)int itemCount;
 @end
