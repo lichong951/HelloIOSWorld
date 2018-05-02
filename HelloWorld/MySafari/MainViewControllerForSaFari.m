@@ -8,24 +8,52 @@
 
 #import "MainViewControllerForSaFari.h"
 
-@interface MainViewControllerForSaFari ()
+@interface MainViewControllerForSaFari ()<UIWebViewDelegate,UIGestureRecognizerDelegate>
 
 @end
-int conIndex1=1;
-@implementation MainViewControllerForSaFari
 
+@implementation MainViewControllerForSaFari
+{
+    UIWebView * webView;
+    UITextField * searchBar;
+    BOOL isUp;
+    UILabel *titleLable;
+    UISwipeGestureRecognizer * upSwipe;
+    UISwipeGestureRecognizer *downSwipe;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64)];
+    webView.scrollView.bounces=NO;
+    webView.delegate=self;
+    isUp=NO;
     
-    self.title=[NSString stringWithFormat:@"第%d视图控制器",conIndex1];
-    conIndex1++;
+    titleLable=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40 ,20 )];
+    titleLable.backgroundColor=[UIColor clearColor];
+    titleLable.font=[UIFont systemFontOfSize:14];
+    titleLable.textAlignment=NSTextAlignmentCenter;
+    
+    //
+    NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"http://www.baidu.com"]];
+    NSURLRequest *request=[NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
+    [self.view addSubview:webView];
+    [self creatSearchBar];
+    [self createGesture];
+    [self createToolBar];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)creatSearchBar{
+    searchBar=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40, 30)];
+    searchBar.borderStyle=UITextBorderStyleRoundedRect;
+    
+}
 /*
 #pragma mark - Navigation
 
