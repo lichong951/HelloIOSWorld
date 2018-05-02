@@ -18,6 +18,8 @@
 #import "MyUICollectionViewCustom.h"
 #import "MyUICollectionViewCircleLayout.h"
 
+#import "MainViewControllerForSaFari.h"
+
 @interface ViewController : UIViewController
 
 
