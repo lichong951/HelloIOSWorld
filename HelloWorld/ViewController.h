@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
-//#import "MyNavigationBarController.h"
+#import "MyNavigationBarController.h"
 #import "MyUITabBarController.h"
 #import "MyUIScrollView.h"
 #import "MyUIWebView.h"
 #import "MyUITableViewViewController.h"
 #import "MyUICollectionView.h"
+
+#import "MyUICollectionViewCustom.h"
 
 @interface ViewController : UIViewController
 

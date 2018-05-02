@@ -36,7 +36,12 @@ int conIndex=1;
     [self addBtn:@"UIWebView" X:20 Y:210 action:@selector(go2UIWebView)];
     [self addBtn:@"UITableView" X:200 Y:210 action:@selector(go2UITableView)];
     
-    [self addBtn:@"UICollectionView" X:20 Y:245 action:@selector(go2UICollectionView)];
+    [self addBtn2:@"UICollectionView" X:20 Y:245 action:@selector(go2UICollectionView)];
+ 
+    
+    //#import "MyUICollectionViewCustom.h"
+    [self addBtn2:@"UICollectionViewCustom" X:20 Y:280 action:@selector(go2UICollectionViewCustom)];
+    
     /**=====================================================
      ***              navigationBar
      ======================================================**/
@@ -87,6 +92,10 @@ int conIndex=1;
     
 
 }
+-(void)go2UICollectionViewCustom{
+    MyUICollectionViewCustom *view=[[MyUICollectionViewCustom alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
+}
 
 -(void)go2UICollectionView{
     MyUICollectionView *view=[[MyUICollectionView alloc] init];
@@ -102,6 +111,24 @@ int conIndex=1;
 }
 -(void)click{
     
+}
+-(void)addBtn2:(NSString *)text X:(CGFloat) x Y:(CGFloat) y action:(SEL)action{
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(x, y, 300, 30);
+    btn.backgroundColor=[UIColor redColor];
+    [btn setTitle:text forState:UIControlStateNormal];
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    //带圆角
+    btn.layer.masksToBounds=YES;
+    btn.layer.cornerRadius=10;
+    //带边框
+    //    btn.layer.borderColor=[UIColor greenColor].CGColor;
+    //    btn.layer.borderWidth=5;
+    //    //阴影
+    //    btn.layer.shadowColor=[UIColor grayColor].CGColor;
+    //    btn.layer.shadowOffset=CGSizeMake(15, 15);
+    //    btn.layer.shadowOpacity=1;
+    [self.view addSubview:btn];
 }
 -(void)addBtn:(NSString *)text X:(CGFloat) x Y:(CGFloat) y action:(SEL)action{
     UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];

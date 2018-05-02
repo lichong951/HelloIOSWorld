@@ -45,6 +45,8 @@
 		FAABA0082099663D0096A0CE /* MyUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAABA0072099663D0096A0CE /* MyUICollectionView.m */; };
 		FAABA009209966610096A0CE /* MyNavigationBarController.h in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFEA20941DE0001D65D9 /* MyNavigationBarController.h */; };
 		FAABA00A209966690096A0CE /* MyUITableViewViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = FA46BB67209573E900B27B22 /* MyUITableViewViewController.h */; };
+		FAABA00D20998D8A0096A0CE /* MyUICollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FAABA00C20998D8A0096A0CE /* MyUICollectionViewFlowLayout.m */; };
+		FAABA011209994250096A0CE /* MyUICollectionViewCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = FAABA010209994250096A0CE /* MyUICollectionViewCustom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,10 @@
 		FA7A00D5208D93C7001E71BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAABA0062099663D0096A0CE /* MyUICollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUICollectionView.h; sourceTree = "<group>"; };
 		FAABA0072099663D0096A0CE /* MyUICollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUICollectionView.m; sourceTree = "<group>"; };
+		FAABA00B20998D8A0096A0CE /* MyUICollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUICollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		FAABA00C20998D8A0096A0CE /* MyUICollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUICollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		FAABA00F209994250096A0CE /* MyUICollectionViewCustom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUICollectionViewCustom.h; sourceTree = "<group>"; };
+		FAABA010209994250096A0CE /* MyUICollectionViewCustom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUICollectionViewCustom.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,10 @@
 				FA46BB68209573E900B27B22 /* MyUITableViewViewController.m */,
 				FAABA0062099663D0096A0CE /* MyUICollectionView.h */,
 				FAABA0072099663D0096A0CE /* MyUICollectionView.m */,
+				FAABA00B20998D8A0096A0CE /* MyUICollectionViewFlowLayout.h */,
+				FAABA00C20998D8A0096A0CE /* MyUICollectionViewFlowLayout.m */,
+				FAABA00F209994250096A0CE /* MyUICollectionViewCustom.h */,
+				FAABA010209994250096A0CE /* MyUICollectionViewCustom.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -255,6 +265,7 @@
 		FA7A00AE208D93C4001E71BD /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				FAABA00E20998E500096A0CE /* view */,
 				FA32AFDE20940B80001D65D9 /* controller */,
 				FA32AFAA2092FB52001D65D9 /* ui */,
 				FA32AFA32092CA48001D65D9 /* util */,
@@ -294,6 +305,13 @@
 				FA7A00D5208D93C7001E71BD /* Info.plist */,
 			);
 			path = HelloWorldUITests;
+			sourceTree = "<group>";
+		};
+		FAABA00E20998E500096A0CE /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,7 +465,9 @@
 				FA32AFBF2092FDD1001D65D9 /* MyUISlider.m in Sources */,
 				FA32AFA52092CA97001D65D9 /* UIFactory.m in Sources */,
 				FA32AFDA20935167001D65D9 /* MyUIActionSheet.m in Sources */,
+				FAABA00D20998D8A0096A0CE /* MyUICollectionViewFlowLayout.m in Sources */,
 				FA32AFB32092FBF9001D65D9 /* MyUITextField.m in Sources */,
+				FAABA011209994250096A0CE /* MyUICollectionViewCustom.m in Sources */,
 				FA32AF9F20920330001D65D9 /* LoginViewController.m in Sources */,
 				FA32AFD120934FE4001D65D9 /* MyUIAlertController.m in Sources */,
 				FA32AFC820934C33001D65D9 /* MyUIStepper.m in Sources */,
