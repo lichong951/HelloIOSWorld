@@ -52,7 +52,34 @@
 -(void)creatSearchBar{
     searchBar=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-40, 30)];
     searchBar.borderStyle=UITextBorderStyleRoundedRect;
+    UIButton *goBtn=[UIButton buttonWithType:UIButtonTypeSystem];
+    [goBtn addTarget:self action:@selector(goWeb) forControlEvents:UIControlEventTouchUpInside];
+    goBtn.frame=CGRectMake(0, 0, 30, 30);
+    [goBtn setTitle:@"GO" forState:UIControlStateNormal];
+    searchBar.rightView=goBtn;
+    searchBar.rightViewMode=UITextFieldViewModeAlways;
+    searchBar.placeholder=@"请输入网址";
+    self.navigationItem.titleView=searchBar;
+}
+-(void)createGesture{
     
+}
+
+-(void)createToolBar{
+    
+}
+-(void)goWeb{
+    if (searchBar.text.length>0) {
+        NSURL *url=[NSURL URLWithString:[NSString stringWithFormat:@"http://%@",searchBar.text]];
+        NSURLRequest *request=[NSURLRequest requestWithURL:url];
+        [webView loadRequest:request];
+    }else{
+        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"温馨提示" message:@"输入的网址不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action=[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
 }
 /*
 #pragma mark - Navigation
