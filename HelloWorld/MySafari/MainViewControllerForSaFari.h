@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LikeTableViewController.h"
+#import "HistoryTableViewController.h"
 
 @interface MainViewControllerForSaFari : UIViewController
 
