@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LikeTableViewController : UIViewController
+#import "MainViewControllerForSaFari.h"
+@interface LikeTableViewController : UITableViewController
 
 @end
