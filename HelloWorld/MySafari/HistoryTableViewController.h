@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewControllerForSaFari.h"
 
-@interface HistoryTableViewController : UIViewController
+@interface HistoryTableViewController :UITableViewController
 
 @end
