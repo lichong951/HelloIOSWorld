@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA02F46020A93D2D0009706E /* URLConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F45F20A93D2D0009706E /* URLConnectionViewController.m */; };
+		FA02F46320A963140009706E /* MyRequestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46220A963140009706E /* MyRequestConnection.m */; };
 		FA32AF9F20920330001D65D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AF9E20920330001D65D9 /* LoginViewController.m */; };
 		FA32AFA22092C4D5001D65D9 /* RegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFA12092C4D5001D65D9 /* RegisViewController.m */; };
 		FA32AFA52092CA97001D65D9 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFA42092CA97001D65D9 /* UIFactory.m */; };
@@ -73,6 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA02F45E20A93D2D0009706E /* URLConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLConnectionViewController.h; sourceTree = "<group>"; };
+		FA02F45F20A93D2D0009706E /* URLConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLConnectionViewController.m; sourceTree = "<group>"; };
+		FA02F46120A963140009706E /* MyRequestConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestConnection.h; sourceTree = "<group>"; };
+		FA02F46220A963140009706E /* MyRequestConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestConnection.m; sourceTree = "<group>"; };
 		FA32AF9D20920330001D65D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FA32AF9E20920330001D65D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA32AFA02092C4D5001D65D9 /* RegisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisViewController.h; sourceTree = "<group>"; };
@@ -186,11 +192,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA02F45D20A93D0D0009706E /* net */ = {
+			isa = PBXGroup;
+			children = (
+				FA02F45E20A93D2D0009706E /* URLConnectionViewController.h */,
+				FA02F45F20A93D2D0009706E /* URLConnectionViewController.m */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
 		FA32AFA32092CA48001D65D9 /* util */ = {
 			isa = PBXGroup;
 			children = (
 				FA32AFA42092CA97001D65D9 /* UIFactory.m */,
 				FA32AFA62092CB5B001D65D9 /* UIFactory.h */,
+				FA02F46120A963140009706E /* MyRequestConnection.h */,
+				FA02F46220A963140009706E /* MyRequestConnection.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -298,6 +315,7 @@
 		FA7A00AE208D93C4001E71BD /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				FA02F45D20A93D0D0009706E /* net */,
 				FA7834B42099D0D900CDE9E5 /* MySafari */,
 				FAABA00E20998E500096A0CE /* view */,
 				FA32AFDE20940B80001D65D9 /* controller */,
@@ -493,12 +511,14 @@
 				FA46BB69209573E900B27B22 /* MyUITableViewViewController.m in Sources */,
 				FA32AFEF2094531B001D65D9 /* MyUITabBarController.m in Sources */,
 				FA7834B32099AC6A00CDE9E5 /* MyUICollectionViewCircleLayout.m in Sources */,
+				FA02F46020A93D2D0009706E /* URLConnectionViewController.m in Sources */,
 				FA32AFF520947662001D65D9 /* MyUIWebView.m in Sources */,
 				FA32AFA22092C4D5001D65D9 /* RegisViewController.m in Sources */,
 				FA32AFB92092FD37001D65D9 /* MyUIPageControl.m in Sources */,
 				FA32AFB02092FBAD001D65D9 /* MyUIButton.m in Sources */,
 				FA7834BD2099D14300CDE9E5 /* LikeTableViewController.m in Sources */,
 				FA7834BA2099D12A00CDE9E5 /* HistoryTableViewController.m in Sources */,
+				FA02F46320A963140009706E /* MyRequestConnection.m in Sources */,
 				FA32AFEC20941DE0001D65D9 /* MyNavigationBarController.m in Sources */,
 				FA32AFAD2092FB73001D65D9 /* MyUILabel.m in Sources */,
 				FA32AFCB20934C7F001D65D9 /* MyUIPickerView.m in Sources */,

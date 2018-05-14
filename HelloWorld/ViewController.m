@@ -36,10 +36,15 @@ int tip=0;
     [self addBtn2:@"UICollectionViewCustom" X:20 Y:280 action:@selector(go2UICollectionViewCustom)];
      [self addBtn2:@"UICollectionViewCircleLayout" X:20 Y:315 action:@selector(go2UICollectionViewCircleLayout)];
     [self addBtn2:@"SaFari" X:20 Y:355 action:@selector(go2SaFari)];
-   
+    [self addBtn2:@"URLConnectionView" X:20 Y:390 action:@selector(go2URLConnView)];
     
 
 }
+-(void)go2URLConnView{
+    URLConnectionViewController *view=[[URLConnectionViewController alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
+}
+
 -(void)go2SaFari{
     //1、先获取到ViewController所在的StoryBoard.
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"SaFari" bundle:[NSBundle mainBundle]];

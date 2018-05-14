@@ -20,6 +20,8 @@
 
 #import "MainViewControllerForSaFari.h"
 
+#import "URLConnectionViewController.h"
+
 @interface ViewController : UIViewController
 
 
