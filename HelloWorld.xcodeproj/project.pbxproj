@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA02F46020A93D2D0009706E /* URLConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F45F20A93D2D0009706E /* URLConnectionViewController.m */; };
 		FA02F46320A963140009706E /* MyRequestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46220A963140009706E /* MyRequestConnection.m */; };
+		FA02F46620A967DA0009706E /* MyRequetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46520A967DA0009706E /* MyRequetManager.m */; };
 		FA32AF9F20920330001D65D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AF9E20920330001D65D9 /* LoginViewController.m */; };
 		FA32AFA22092C4D5001D65D9 /* RegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFA12092C4D5001D65D9 /* RegisViewController.m */; };
 		FA32AFA52092CA97001D65D9 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFA42092CA97001D65D9 /* UIFactory.m */; };
@@ -79,6 +80,8 @@
 		FA02F45F20A93D2D0009706E /* URLConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLConnectionViewController.m; sourceTree = "<group>"; };
 		FA02F46120A963140009706E /* MyRequestConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequestConnection.h; sourceTree = "<group>"; };
 		FA02F46220A963140009706E /* MyRequestConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequestConnection.m; sourceTree = "<group>"; };
+		FA02F46420A967DA0009706E /* MyRequetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyRequetManager.h; sourceTree = "<group>"; };
+		FA02F46520A967DA0009706E /* MyRequetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequetManager.m; sourceTree = "<group>"; };
 		FA32AF9D20920330001D65D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FA32AF9E20920330001D65D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA32AFA02092C4D5001D65D9 /* RegisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisViewController.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				FA32AFA62092CB5B001D65D9 /* UIFactory.h */,
 				FA02F46120A963140009706E /* MyRequestConnection.h */,
 				FA02F46220A963140009706E /* MyRequestConnection.m */,
+				FA02F46420A967DA0009706E /* MyRequetManager.h */,
+				FA02F46520A967DA0009706E /* MyRequetManager.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				FA32AFB02092FBAD001D65D9 /* MyUIButton.m in Sources */,
 				FA7834BD2099D14300CDE9E5 /* LikeTableViewController.m in Sources */,
 				FA7834BA2099D12A00CDE9E5 /* HistoryTableViewController.m in Sources */,
+				FA02F46620A967DA0009706E /* MyRequetManager.m in Sources */,
 				FA02F46320A963140009706E /* MyRequestConnection.m in Sources */,
 				FA32AFEC20941DE0001D65D9 /* MyNavigationBarController.m in Sources */,
 				FA32AFAD2092FB73001D65D9 /* MyUILabel.m in Sources */,
