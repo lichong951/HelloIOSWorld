@@ -4,3 +4,7 @@ IDEWorkspaceChecks.plist
 project.pbxproj
 contents.xcworkspacedata
 Breakpoints_v2.xcbkptlist
+xcschememanagement.plist
+Pods-HelloWorldUITests.xcscheme
+Pods-HelloWorldTests.xcscheme
+Pods-HelloWorld.xcscheme
