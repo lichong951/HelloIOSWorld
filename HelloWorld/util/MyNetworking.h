@@ -12,9 +12,12 @@
 
 @interface MyNetworking : NSObject
 @property( nonatomic, strong) NSDictionary * HTTPHeadersDic;
+
 +(MyNetworking *)sharedNetWorking;
-+( void) getRequestWithURLString:( NSString *)urlStr finish:( void(^)( BOOL success, NSData *data)) finish;
-+( void) postRequestWithURLString:( NSString *)urlStr paramDic:( NSDictionary *)paramfinish:( void(^)( BOOL success, NSData *data)) finish;
+
++(void)getRequestWithURLString:(NSString *)urlStr finish:(void(^)(BOOL success, NSData *data)) finish;
+
++( void) postRequestWithURLString:( NSString *)urlStr paramDic:( NSDictionary *)param finish:( void(^)( BOOL success, NSData *data)) finish;
 
 
 @end

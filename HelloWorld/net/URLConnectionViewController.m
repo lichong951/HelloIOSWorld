@@ -55,6 +55,17 @@
             NSLog(@"MyRequetManager error");
         }
     }];
+    
+    NSLog(@"MyNetworking");
+   
+    [MyNetworking postRequestWithURLString:@"http://www.tuling123.com/openapi/api" paramDic:(NSDictionary *)@{@"key":@"5725338003333615ed6d7263bbd46e9c"} finish:^(BOOL success, NSData *data) {
+        if (success) {
+            NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+             NSLog(@"%@",dic);
+        }
+       
+    }];
+    
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(nonnull NSURLResponse *)response{
