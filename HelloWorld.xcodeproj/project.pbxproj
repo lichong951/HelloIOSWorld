@@ -14,6 +14,8 @@
 		FA02F46320A963140009706E /* MyRequestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46220A963140009706E /* MyRequestConnection.m */; };
 		FA02F46620A967DA0009706E /* MyRequetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46520A967DA0009706E /* MyRequetManager.m */; };
 		FA02F46920AC608B0009706E /* MyNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46820AC608B0009706E /* MyNetworking.m */; };
+		FA02F46D20ADAA340009706E /* SmileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA02F46C20ADAA340009706E /* SmileViewController.m */; };
+		FA02F46F20ADAA870009706E /* Smile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA02F46E20ADAA870009706E /* Smile.storyboard */; };
 		FA32AF9F20920330001D65D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AF9E20920330001D65D9 /* LoginViewController.m */; };
 		FA32AFA22092C4D5001D65D9 /* RegisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFA12092C4D5001D65D9 /* RegisViewController.m */; };
 		FA32AFA52092CA97001D65D9 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32AFA42092CA97001D65D9 /* UIFactory.m */; };
@@ -96,6 +98,9 @@
 		FA02F46520A967DA0009706E /* MyRequetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRequetManager.m; sourceTree = "<group>"; };
 		FA02F46720AC608B0009706E /* MyNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyNetworking.h; sourceTree = "<group>"; };
 		FA02F46820AC608B0009706E /* MyNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNetworking.m; sourceTree = "<group>"; };
+		FA02F46B20ADAA340009706E /* SmileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmileViewController.h; sourceTree = "<group>"; };
+		FA02F46C20ADAA340009706E /* SmileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmileViewController.m; sourceTree = "<group>"; };
+		FA02F46E20ADAA870009706E /* Smile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Smile.storyboard; sourceTree = "<group>"; };
 		FA32AF9D20920330001D65D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FA32AF9E20920330001D65D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA32AFA02092C4D5001D65D9 /* RegisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisViewController.h; sourceTree = "<group>"; };
@@ -245,6 +250,16 @@
 			path = net;
 			sourceTree = "<group>";
 		};
+		FA02F46A20ADA9F30009706E /* Smile */ = {
+			isa = PBXGroup;
+			children = (
+				FA02F46B20ADAA340009706E /* SmileViewController.h */,
+				FA02F46C20ADAA340009706E /* SmileViewController.m */,
+				FA02F46E20ADAA870009706E /* Smile.storyboard */,
+			);
+			path = Smile;
+			sourceTree = "<group>";
+		};
 		FA32AFA32092CA48001D65D9 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +380,7 @@
 		FA7A00AE208D93C4001E71BD /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				FA02F46A20ADA9F30009706E /* Smile */,
 				FA02F45D20A93D0D0009706E /* net */,
 				FA7834B42099D0D900CDE9E5 /* MySafari */,
 				FAABA00E20998E500096A0CE /* view */,
@@ -527,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA32AFE920941D8F001D65D9 /* MyNavigation.storyboard in Resources */,
+				FA02F46F20ADAA870009706E /* Smile.storyboard in Resources */,
 				FA7834C02099E03F00CDE9E5 /* SaFari.storyboard in Resources */,
 				FA7A00BC208D93C6001E71BD /* LaunchScreen.storyboard in Resources */,
 				FA7A00B9208D93C6001E71BD /* Assets.xcassets in Resources */,
@@ -655,6 +672,7 @@
 				FA32AFCB20934C7F001D65D9 /* MyUIPickerView.m in Sources */,
 				FA32AFBC2092FD9E001D65D9 /* MyUISegmentedControl.m in Sources */,
 				FA32AFBF2092FDD1001D65D9 /* MyUISlider.m in Sources */,
+				FA02F46D20ADAA340009706E /* SmileViewController.m in Sources */,
 				FA32AFA52092CA97001D65D9 /* UIFactory.m in Sources */,
 				FA32AFDA20935167001D65D9 /* MyUIActionSheet.m in Sources */,
 				FAABA00D20998D8A0096A0CE /* MyUICollectionViewFlowLayout.m in Sources */,
