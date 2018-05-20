@@ -10,7 +10,7 @@
 
 int tip=0;
 
-@interface ViewController ()<UITextFieldDelegate>
+@interface ViewController ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -40,6 +40,20 @@ int tip=0;
     
 
 }
+-(void)createGesture{
+    UISwipeGestureRecognizer *upSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(upSwipe:)];
+    upSwipe.delegate=self;
+    upSwipe.direction=UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:upSwipe];
+    
+    UISwipeGestureRecognizer *downSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(downSwipe:)];
+    downSwipe.delegate=self;
+    downSwipe.direction=UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:downSwipe];
+    
+}
+
+
 -(void)go2SaFari{
     //1、先获取到ViewController所在的StoryBoard.
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"SaFari" bundle:[NSBundle mainBundle]];

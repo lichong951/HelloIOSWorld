@@ -77,17 +77,24 @@
     }
 }
 -(void)createGesture{
-    _upSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(upSwipe)];
+    _upSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(upSwipe:)];
     _upSwipe.delegate=self;
     _upSwipe.direction=UISwipeGestureRecognizerDirectionUp;
     [webView addGestureRecognizer:_upSwipe];
     
-    _downSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(downSwipe)];
+    _downSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(downSwipe:)];
     _downSwipe.delegate=self;
     _downSwipe.direction=UISwipeGestureRecognizerDirectionDown;
     [webView addGestureRecognizer:_downSwipe];
     
 }
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(nonnull UIGestureRecognizer *)otherGestureRecognizer:(UIPress *)press{
+    if (gestureRecognizer==_upSwipe ||gestureRecognizer==_downSwipe) {
+        return YES;
+    }
+    return NO;
+}
+
 -(void)upSwipe{
     if (isUp) {
         return;
