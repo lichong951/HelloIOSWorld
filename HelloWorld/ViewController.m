@@ -10,7 +10,7 @@
 
 int tip=0;
 
-@interface ViewController ()<UITextFieldDelegate,UIGestureRecognizerDelegate>
+@interface ViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -36,23 +36,14 @@ int tip=0;
     [self addBtn2:@"UICollectionViewCustom" X:20 Y:280 action:@selector(go2UICollectionViewCustom)];
      [self addBtn2:@"UICollectionViewCircleLayout" X:20 Y:315 action:@selector(go2UICollectionViewCircleLayout)];
     [self addBtn2:@"SaFari" X:20 Y:355 action:@selector(go2SaFari)];
-   
+    [self addBtn2:@"URLConnectionView" X:20 Y:390 action:@selector(go2URLConnView)];
     
 
 }
--(void)createGesture{
-    UISwipeGestureRecognizer *upSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(upSwipe:)];
-    upSwipe.delegate=self;
-    upSwipe.direction=UISwipeGestureRecognizerDirectionUp;
-    [self.view addGestureRecognizer:upSwipe];
-    
-    UISwipeGestureRecognizer *downSwipe=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(downSwipe:)];
-    downSwipe.delegate=self;
-    downSwipe.direction=UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:downSwipe];
-    
+-(void)go2URLConnView{
+    URLConnectionViewController *view=[[URLConnectionViewController alloc] init];
+    [self presentViewController:view animated:YES completion:nil ];
 }
-
 
 -(void)go2SaFari{
     //1、先获取到ViewController所在的StoryBoard.

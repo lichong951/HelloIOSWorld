@@ -11,5 +11,5 @@
 #import "HistoryTableViewController.h"
 
 @interface MainViewControllerForSaFari : UIViewController
-
+-(void)loadURL:(NSString *)urlStr;
 @end
